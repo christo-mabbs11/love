@@ -32,7 +32,12 @@
     justify-content: center;
     flex-direction: column;
 
+    & > img {
+      width: 250px;
+    }
+
     h1 {
+      margin: 10px 0 10px;
       font-size: 50px;
       font-weight: 800;
       color: #ff0080;
@@ -40,7 +45,7 @@
 
     .buttons {
 
-      background-color: red;
+      position: relative;
 
       ion-button {
 
@@ -51,6 +56,25 @@
       .button {
 
         position: absolute;
+        color: white;
+        background-color: #ff0080;
+
+        font-size: 20px;
+
+        border-radius: 7px;
+        padding: 10px 15px;
+
+        &#no {
+          left: 10px;
+        }
+
+        &#yes {
+          right: 10px;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
 
       }
 
