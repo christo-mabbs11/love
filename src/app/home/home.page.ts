@@ -9,7 +9,7 @@ export class HomePage {
 
   state : number = 0;
 
-  closeDistance : number = 80;
+  closeDistance : number = 100;
 
   noScreenX : number = 0;
   noScreenY : number = 0;
@@ -68,9 +68,6 @@ export class HomePage {
         mouseXLast = mouseX;
         mouseYLast = mouseY;
 
-        // Debug
-        console.log(distance);
-        
         // Calculate the fail opac
         if ( distance > 170 ) {
           this.failOpacity = 0;
