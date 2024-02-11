@@ -14,8 +14,10 @@ export class HomePage {
   noScreenX : number = 0;
   noScreenY : number = 0;
 
-  noLeft : number = 10;
+  noLeft : number = 50;
   noTop : number = 0;
+
+  failOpacity : number = 0;
 
   constructor( ) {}
 
@@ -65,6 +67,19 @@ export class HomePage {
         // Save the last position of the mouse
         mouseXLast = mouseX;
         mouseYLast = mouseY;
+
+        // Debug
+        console.log(distance);
+        
+        // Calculate the fail opac
+        if ( distance > 100 ) {
+          this.failOpacity = 0;
+        } else if ( distance < this.closeDistance ) {
+          this.failOpacity = 1;
+        } else {
+          this.failOpacity = 1 - (distance - this.closeDistance) / (105 - this.closeDistance);
+        }
+        this.failOpacity *= 0.95;
 
       });
 

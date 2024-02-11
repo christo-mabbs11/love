@@ -70,12 +70,12 @@
         font-weight: 800;
 
         &#no {
-          left: 10px;
+          left: 50px;
           top: 0px;
         }
 
         &#yes {
-          right: 10px;
+          right: 50px;
           top: 0px;
         }
 
@@ -92,7 +92,19 @@
   }
 
   .fail {
-    display: none;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: #333;
+
+    z-index: 999;
+
+    pointer-events: none;
+
   }
 
   .success {
