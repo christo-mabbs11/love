@@ -7,6 +7,15 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor( ) {}
+
+  ngOnInit(): void {
+    
+    // Detect Mouse movements
+    document.addEventListener('mousemove', (event) => {
+      console.log(event);
+    });
+
+  }
 
 }
