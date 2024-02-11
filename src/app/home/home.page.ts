@@ -69,14 +69,14 @@ export class HomePage {
         mouseYLast = mouseY;
 
         // Calculate the fail opac
-        if ( distance > 170 ) {
+        if ( distance > 220 ) {
           this.failOpacity = 0;
         } else if ( distance < this.closeDistance ) {
           this.failOpacity = 1;
         } else {
-          this.failOpacity = 1 - (distance - this.closeDistance) / (175 - this.closeDistance);
+          this.failOpacity = 1 - (distance - this.closeDistance) / (225 - this.closeDistance);
         }
-        this.failOpacity *= 0.95;
+        this.failOpacity *= 0.9;
 
       });
 
