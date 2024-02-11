@@ -67,6 +67,8 @@
         border-radius: 7px;
         padding: 10px 15px;
 
+        font-weight: 800;
+
         &#no {
           left: 15px;
         }
@@ -75,8 +77,10 @@
           right: 15px;
         }
 
+        transition: opacity 250ms ease-in-out;
         &:hover {
           cursor: pointer;
+          opacity: 0.65;
         }
 
       }
