@@ -1,9 +1,24 @@
 <div id="main-contents">
-  <h1>Will you be my valentines?</h1>
-  <div class="buttons">
-    <ion-button id="yes">Yes</ion-button>
-    <ion-button id="no">No</ion-button>
+
+  <div class="bg" style="background-image: url('assets/bg.jpg');"></div>
+
+  <div class="contents">
+    <h1>Un beb, will you be my valentines?? 👀</h1>
+    <div class="buttons">
+      <div id="yes" class="button">Yes!</div>
+      <div id="no" class="button">Naur</div>
+    </div>
   </div>
+
+  <div class="fail">
+    <h3>DON'T</h3>
+  </div>
+
+  <div class="success" *ngIf="state == 2">
+    <div class="bg" style="background-image: url('assets/hearts.gif');"></div>
+    <h2>Wah thanks baby!!!!! 😍 I love you thanks for being my Valentines 💕😘</h2>
+  </div>
+
 </div>
 
 

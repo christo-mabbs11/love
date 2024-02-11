@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  state : number = 0;
+
   constructor( ) {}
 
   ngOnInit(): void {

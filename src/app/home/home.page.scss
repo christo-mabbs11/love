@@ -1,5 +1,11 @@
 #main-contents {
 
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,8 +14,81 @@
   width: 100vw;
   height: 100vh;
 
-  h1 {
-    font-weight: 800;
+  & > .bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.35;
+  }
+
+  .contents {
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h1 {
+      font-size: 50px;
+      font-weight: 800;
+      color: #ff0080;
+    }
+
+    .buttons {
+
+      background-color: red;
+
+      ion-button {
+
+        width: 100px;
+
+      }
+
+      .button {
+
+        position: absolute;
+
+      }
+
+    }
+  
+  }
+
+  .fail {
+    display: none;
+  }
+
+  .success {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    // Pink color
+    background-color: #f9cce5;
+
+    z-index: 999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .bg {
+      opacity: 0.2;
+    }
+
+    h2 {
+      font-weight: 800;
+      position: relative;
+    }
+
   }
 
 }
