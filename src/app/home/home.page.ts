@@ -14,7 +14,7 @@ export class HomePage {
   noScreenX : number = 0;
   noScreenY : number = 0;
 
-  noLeft : number = 100;
+  noLeft : number = 80;
   noTop : number = 0;
 
   failOpacity : number = 0;
