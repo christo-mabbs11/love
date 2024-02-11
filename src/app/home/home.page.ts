@@ -20,4 +20,8 @@ export class HomePage {
 
   }
 
+  clickYes () {
+    this.state = 2;
+  }
+
 }
