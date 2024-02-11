@@ -9,6 +9,8 @@ export class HomePage {
 
   state : number = 0;
 
+  closeDistance : number = 80;
+
   noScreenX : number = 0;
   noScreenY : number = 0;
 
@@ -30,35 +32,39 @@ export class HomePage {
       this.noScreenY = noButtonRect.y + (noButtonRect.height / 2);
 
       // Detect Mouse movements
+      let mouseXLast = 0;
+      let mouseYLast = 0;
       document.addEventListener('mousemove', (event) => {
 
         // Get the x and y position of the mouse
         let mouseX = event.clientX;
         let mouseY = event.clientY;
 
+        // Save how far the mouse moved since the last event
+        let newMoveX = mouseX - mouseXLast;
+        let newMoveY = mouseY - mouseYLast;
+
         // Calculate the distance between the mouse and the no button
         let distanceX = mouseX - this.noScreenX;
         let distanceY = mouseY - this.noScreenY;
 
-        // If this distance is less than 100, move the noLeft to the opposite direction
-        if (Math.abs(distanceX) < 50) {
-          if (distanceX > 0) {
-            this.noLeft--;
-            this.noScreenX--;
-          } else {
-            this.noLeft++;
-            this.noScreenX++;
-          }
+        // Calculate the distance between the mouse and the no button (xy center)
+        let distance = Math.sqrt((distanceX * distanceX) + (distanceY * distanceY));
+
+        // if the distance is less than the closeDistance
+        if (distance < this.closeDistance) {
+
+          // Calculate the angle between the mouse and the no button
+          this.noLeft += newMoveX;
+          this.noScreenX += newMoveX;
+          this.noTop += newMoveY;
+          this.noScreenY += newMoveY;
+
         }
-        if (Math.abs(distanceY) < 50) {
-          if (distanceY > 0) {
-            this.noTop--;
-            this.noScreenY--;
-          } else {
-            this.noTop++;
-            this.noScreenY++;
-          }
-        }
+
+        // Save the last position of the mouse
+        mouseXLast = mouseX;
+        mouseYLast = mouseY;
 
       });
 
