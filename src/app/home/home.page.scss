@@ -39,7 +39,7 @@
     }
 
     h1 {
-      margin: 10px 0 10px;
+      margin: 10px 0 25px;
       font-size: 50px;
       font-weight: 800;
       color: #ff0080;
@@ -62,20 +62,20 @@
         color: white;
         background-color: #ff0080;
 
-        font-size: 20px;
+        font-size: 35px;
 
         border-radius: 7px;
-        padding: 10px 15px;
+        padding: 15px 20px;
 
         font-weight: 800;
 
         &#no {
-          left: 50px;
+          left: 100px;
           top: 0px;
         }
 
         &#yes {
-          right: 50px;
+          right: 100px;
           top: 0px;
         }
 
@@ -104,6 +104,21 @@
     z-index: 999;
 
     pointer-events: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    img {
+      width: 200px;
+    }
+
+    h3 {
+      font-weight: 800;
+      color: white;
+      font-size: 50px;
+    }
 
   }
 
