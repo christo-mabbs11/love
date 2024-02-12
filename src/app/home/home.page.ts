@@ -76,7 +76,6 @@ export class HomePage {
         } else {
           this.failOpacity = 1 - (distance - this.closeDistance) / (225 - this.closeDistance);
         }
-        this.failOpacity *= 0.9;
 
       });
 
