@@ -9,6 +9,7 @@ export class HomePage {
 
   state : number = 0;
 
+  prevDistance : number = 99999999;
   closeDistance : number = 100;
   closestDistance : number = 70;
 
@@ -55,7 +56,7 @@ export class HomePage {
         let distance = Math.sqrt((distanceX * distanceX) + (distanceY * distanceY));
 
         // if the distance is less than the closeDistance
-        if (distance < this.closeDistance && distance > this.closestDistance ) {
+        if (distance < this.closeDistance && distance > this.closestDistance && (distance-1) <= this.prevDistance ) {
 
           // Calculate the angle between the mouse and the no button
           this.noLeft += newMoveX;
@@ -77,6 +78,9 @@ export class HomePage {
         } else {
           this.failOpacity = 1 - (distance - this.closeDistance) / (225 - this.closeDistance);
         }
+
+        // Save the prev distance
+        this.prevDistance = distance;
 
       });
 
