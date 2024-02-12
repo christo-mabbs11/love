@@ -9,7 +9,6 @@ export class HomePage {
 
   state : number = 0;
 
-  prevDistance : number = 99999999;
   closeDistance : number = 100;
   closestDistance : number = 70;
 
@@ -78,9 +77,6 @@ export class HomePage {
         } else {
           this.failOpacity = 1 - (distance - this.closeDistance) / (225 - this.closeDistance);
         }
-
-        // Save the prev distance
-        this.prevDistance = distance;
 
       });
 
