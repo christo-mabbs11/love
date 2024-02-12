@@ -10,6 +10,7 @@ export class HomePage {
   state : number = 0;
 
   closeDistance : number = 100;
+  closestDistance : number = 70;
 
   noScreenX : number = 0;
   noScreenY : number = 0;
@@ -54,7 +55,7 @@ export class HomePage {
         let distance = Math.sqrt((distanceX * distanceX) + (distanceY * distanceY));
 
         // if the distance is less than the closeDistance
-        if (distance < this.closeDistance) {
+        if (distance < this.closeDistance && distance > this.closestDistance ) {
 
           // Calculate the angle between the mouse and the no button
           this.noLeft += newMoveX;
