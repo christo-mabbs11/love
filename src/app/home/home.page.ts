@@ -57,6 +57,18 @@ export class HomePage {
         // if the distance is less than the closeDistance
         if (distance < this.closeDistance && distance > this.closestDistance ) {
 
+          // Create a hard limit on the total distance the no button can move
+          if ( newMoveX > 200 ) {
+            newMoveX = 200;
+          } else if ( newMoveX < -200 ) {
+            newMoveX = -200;
+          }
+          if ( newMoveY > 200 ) {
+            newMoveY = 200;
+          } else if ( newMoveY < -200 ) {
+            newMoveY = -200;
+          }
+
           // Calculate the angle between the mouse and the no button
           this.noLeft += newMoveX;
           this.noScreenX += newMoveX;
