@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - npm install -g @ionic/cli
+
+  pre_build:
+    commands:
+      - npm install
+
+  build:
+    commands:
+      - ionic build --prod
+      - aws s3 cp www s3://bbybemyvalentine.com/ --recursive
+
