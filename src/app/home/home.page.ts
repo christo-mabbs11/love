@@ -56,7 +56,7 @@ export class HomePage {
         let distance = Math.sqrt((distanceX * distanceX) + (distanceY * distanceY));
 
         // if the distance is less than the closeDistance
-        if (distance < this.closeDistance && distance > this.closestDistance && (distance-1) <= this.prevDistance ) {
+        if (distance < this.closeDistance && distance > this.closestDistance ) {
 
           // Calculate the angle between the mouse and the no button
           this.noLeft += newMoveX;
